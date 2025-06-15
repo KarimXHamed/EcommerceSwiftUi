@@ -6,13 +6,30 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		80991DD82DFEE6FE00C0FA46 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 80991DD72DFEE6FE00C0FA46 /* Alamofire */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		801A6CF42DFB088F00C331D8 /* EcommerceSwiftUi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcommerceSwiftUi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		804BE98C2DFECBC500AB17D2 /* Exceptions for "EcommerceSwiftUi" folder in "EcommerceSwiftUi" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/Info.plist,
+			);
+			target = 801A6CF32DFB088F00C331D8 /* EcommerceSwiftUi */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		801A6CF62DFB088F00C331D8 /* EcommerceSwiftUi */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				804BE98C2DFECBC500AB17D2 /* Exceptions for "EcommerceSwiftUi" folder in "EcommerceSwiftUi" target */,
+			);
 			path = EcommerceSwiftUi;
 			sourceTree = "<group>";
 		};
@@ -23,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80991DD82DFEE6FE00C0FA46 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +83,7 @@
 			);
 			name = EcommerceSwiftUi;
 			packageProductDependencies = (
+				80991DD72DFEE6FE00C0FA46 /* Alamofire */,
 			);
 			productName = EcommerceSwiftUi;
 			productReference = 801A6CF42DFB088F00C331D8 /* EcommerceSwiftUi.app */;
@@ -94,6 +113,9 @@
 			);
 			mainGroup = 801A6CEB2DFB088E00C331D8;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				80991DD62DFEE6FE00C0FA46 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 801A6CF52DFB088F00C331D8 /* Products */;
 			projectDirPath = "";
@@ -251,9 +273,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"EcommerceSwiftUi/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"EcommerceSwiftUi/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EcommerceSwiftUi/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -279,9 +302,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"EcommerceSwiftUi/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"EcommerceSwiftUi/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EcommerceSwiftUi/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -322,6 +346,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		80991DD62DFEE6FE00C0FA46 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		80991DD72DFEE6FE00C0FA46 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80991DD62DFEE6FE00C0FA46 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 801A6CEC2DFB088E00C331D8 /* Project object */;
 }
