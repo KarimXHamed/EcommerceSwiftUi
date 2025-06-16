@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class RequestBuilder {
+class RequestBuilder: RequestBuilderProtocol {
     private var urlComponents: URLComponents?
     private var urlRequest: URLRequest?
     //MARK: -configuiring the request

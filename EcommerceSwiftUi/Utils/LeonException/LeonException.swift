@@ -141,3 +141,30 @@ extension LeonException {
     
 }
 
+extension LeonException {
+    static func getErrorFromStatusCode(statusCode:Int) -> LeonException {
+        switch statusCode {
+        case 502...503:
+            return .network(.retrial)
+            
+        case 520:
+            return .network(.handled)
+            
+        case 401:
+            return .client(.unauthorized)
+            
+        case 400:
+            return .client(.responseValidation)
+            
+        case 499:
+            return .client(.clientUnhandled)
+            
+        case 500:
+            return .server(.internalServerError)
+            
+        default:
+            return .unknown(.unknown)
+        }
+    }
+}
+

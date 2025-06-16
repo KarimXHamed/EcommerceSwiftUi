@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80991DD82DFEE6FE00C0FA46 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 80991DD72DFEE6FE00C0FA46 /* Alamofire */; };
+		80F22F5C2E00250200F4D01F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 80F22F5B2E00250200F4D01F /* Alamofire */; };
+		80F22F5E2E00250200F4D01F /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 80F22F5D2E00250200F4D01F /* AlamofireDynamic */; };
+		80F22F612E0025F100F4D01F /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 80F22F602E0025F100F4D01F /* Factory */; };
+		80F22F632E0025F100F4D01F /* FactoryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 80F22F622E0025F100F4D01F /* FactoryKit */; };
+		80F22F652E0025F100F4D01F /* FactoryTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 80F22F642E0025F100F4D01F /* FactoryTesting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +44,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80991DD82DFEE6FE00C0FA46 /* Alamofire in Frameworks */,
+				80F22F612E0025F100F4D01F /* Factory in Frameworks */,
+				80F22F5C2E00250200F4D01F /* Alamofire in Frameworks */,
+				80F22F632E0025F100F4D01F /* FactoryKit in Frameworks */,
+				80F22F652E0025F100F4D01F /* FactoryTesting in Frameworks */,
+				80F22F5E2E00250200F4D01F /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				801A6CF62DFB088F00C331D8 /* EcommerceSwiftUi */,
+				80F22F5F2E0025F100F4D01F /* Frameworks */,
 				801A6CF52DFB088F00C331D8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +70,13 @@
 				801A6CF42DFB088F00C331D8 /* EcommerceSwiftUi.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		80F22F5F2E0025F100F4D01F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,7 +99,11 @@
 			);
 			name = EcommerceSwiftUi;
 			packageProductDependencies = (
-				80991DD72DFEE6FE00C0FA46 /* Alamofire */,
+				80F22F5B2E00250200F4D01F /* Alamofire */,
+				80F22F5D2E00250200F4D01F /* AlamofireDynamic */,
+				80F22F602E0025F100F4D01F /* Factory */,
+				80F22F622E0025F100F4D01F /* FactoryKit */,
+				80F22F642E0025F100F4D01F /* FactoryTesting */,
 			);
 			productName = EcommerceSwiftUi;
 			productReference = 801A6CF42DFB088F00C331D8 /* EcommerceSwiftUi.app */;
@@ -114,7 +134,8 @@
 			mainGroup = 801A6CEB2DFB088E00C331D8;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				80991DD62DFEE6FE00C0FA46 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				80F22F562E001C7100F4D01F /* XCRemoteSwiftPackageReference "Factory" */,
+				80F22F5A2E00250200F4D01F /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 801A6CF52DFB088F00C331D8 /* Products */;
@@ -348,7 +369,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		80991DD62DFEE6FE00C0FA46 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		80F22F562E001C7100F4D01F /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.3;
+			};
+		};
+		80F22F5A2E00250200F4D01F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -359,10 +388,30 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		80991DD72DFEE6FE00C0FA46 /* Alamofire */ = {
+		80F22F5B2E00250200F4D01F /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 80991DD62DFEE6FE00C0FA46 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 80F22F5A2E00250200F4D01F /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		80F22F5D2E00250200F4D01F /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80F22F5A2E00250200F4D01F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+		80F22F602E0025F100F4D01F /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80F22F562E001C7100F4D01F /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
+		80F22F622E0025F100F4D01F /* FactoryKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80F22F562E001C7100F4D01F /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = FactoryKit;
+		};
+		80F22F642E0025F100F4D01F /* FactoryTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80F22F562E001C7100F4D01F /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = FactoryTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

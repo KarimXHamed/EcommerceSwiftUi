@@ -1,17 +1,17 @@
 //
-//  CategoriesRequest.swift
+//  FlashSaleProductsRequest.swift
 //  EcommerceSwiftUi
 //
-//  Created by Karim Hamed  on 15/06/2025.
+//  Created by Karim Hamed  on 16/06/2025.
 //
 import Foundation
 
-struct CategoriesRequest: EndpointProtocol {
+struct FlashSaleProductsRequest: EndpointProtocol {
     var baseURL: URL {
-        return URL(string: "https://dummyjson.com")!
+        URL(string: "https://dummyjson.com")!
     }
     
-    var path: String = "products/category-list"
+    var path: String = "/products/category/smartphones"
     
     var parameters: [FieldKey : Any]?
     
@@ -26,7 +26,7 @@ struct CategoriesRequest: EndpointProtocol {
     var fileName: String?
     
     func buildBody() -> [FieldKey : Any] {
-        return [:]
+        [:]
     }
     
     
