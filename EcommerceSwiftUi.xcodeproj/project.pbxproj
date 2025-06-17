@@ -8,11 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		80F22F5C2E00250200F4D01F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 80F22F5B2E00250200F4D01F /* Alamofire */; };
-		80F22F5E2E00250200F4D01F /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 80F22F5D2E00250200F4D01F /* AlamofireDynamic */; };
 		80F22F612E0025F100F4D01F /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 80F22F602E0025F100F4D01F /* Factory */; };
 		80F22F632E0025F100F4D01F /* FactoryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 80F22F622E0025F100F4D01F /* FactoryKit */; };
 		80F22F652E0025F100F4D01F /* FactoryTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 80F22F642E0025F100F4D01F /* FactoryTesting */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		806BC3252E0145A000A7ED00 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		801A6CF42DFB088F00C331D8 /* EcommerceSwiftUi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcommerceSwiftUi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +60,6 @@
 				80F22F5C2E00250200F4D01F /* Alamofire in Frameworks */,
 				80F22F632E0025F100F4D01F /* FactoryKit in Frameworks */,
 				80F22F652E0025F100F4D01F /* FactoryTesting in Frameworks */,
-				80F22F5E2E00250200F4D01F /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +100,7 @@
 				801A6CF02DFB088F00C331D8 /* Sources */,
 				801A6CF12DFB088F00C331D8 /* Frameworks */,
 				801A6CF22DFB088F00C331D8 /* Resources */,
+				806BC3252E0145A000A7ED00 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -100,7 +112,6 @@
 			name = EcommerceSwiftUi;
 			packageProductDependencies = (
 				80F22F5B2E00250200F4D01F /* Alamofire */,
-				80F22F5D2E00250200F4D01F /* AlamofireDynamic */,
 				80F22F602E0025F100F4D01F /* Factory */,
 				80F22F622E0025F100F4D01F /* FactoryKit */,
 				80F22F642E0025F100F4D01F /* FactoryTesting */,
@@ -392,11 +403,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 80F22F5A2E00250200F4D01F /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		80F22F5D2E00250200F4D01F /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 80F22F5A2E00250200F4D01F /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
 		};
 		80F22F602E0025F100F4D01F /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;

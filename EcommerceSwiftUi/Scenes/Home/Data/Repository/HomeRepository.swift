@@ -6,7 +6,7 @@
 //
 import Factory
 import Combine
-class HomeRepository: HomeRepositoryProtocol {
+class HomeRepository:HomeRepositoryProtocol{
     
     //MARK: -variables
     @Injected(\.homeRemoteDS) private var remoteDS: HomeRemoteDSProtocol
@@ -14,9 +14,9 @@ class HomeRepository: HomeRepositoryProtocol {
     @Injected(\.categoriesListMapper) private var categoryMapper: CategoriesListMapper
     
     //MARK: -Properties
-    func getCategoriesList(request: CategoriesRequest) -> AnyPublisher<CategoriesList, LeonException> {
+    func getCategoriesList(request: CategoriesRequest) -> AnyPublisher<CategoriesList, Error> {
         Deferred {
-            Future<CategoriesList, LeonException> { [weak self] promise in
+            Future<CategoriesList, Error> { [weak self] promise in
                 guard let self = self else {
                     return
                 }
@@ -41,9 +41,9 @@ class HomeRepository: HomeRepositoryProtocol {
     
     
     
-    func getFlashSaleProducts(request: FlashSaleProductsRequest) -> AnyPublisher<[Product], LeonException> {
+    func getFlashSaleProducts(request: FlashSaleProductsRequest) -> AnyPublisher<Products, Error> {
         Deferred {
-            Future<[Product], LeonException> { [weak self] promise in
+            Future<Products, Error> { [weak self] promise in
                 guard let self = self else {
                     return
                 }
@@ -51,7 +51,7 @@ class HomeRepository: HomeRepositoryProtocol {
                 self.remoteDS.getFlashSaleProducts(request: request) { result in
                     switch result {
                     case .success(let productsDto):
-                        let mappedProducts = productsDto.map { self.productMapper.dtoToDomain(dto: $0) }
+                        let mappedProducts = self.productMapper.dtoToDomain(dto: productsDto)
                         promise(.success(mappedProducts))
                         
                     case .failure(let error):

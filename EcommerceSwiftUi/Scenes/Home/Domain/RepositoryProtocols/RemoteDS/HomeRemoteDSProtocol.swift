@@ -6,7 +6,7 @@
 //
 protocol HomeRemoteDSProtocol {
     
-    func getCategoriesList(request: CategoriesRequest, completion: @escaping(Result<[String],LeonException>)-> Void)
+    func getCategoriesList(request: CategoriesRequest, completion: @escaping(Result<[String],Error>)-> Void)
     
-    func getFlashSaleProducts(request: FlashSaleProductsRequest, completion: @escaping(Result<[ProductDTO],LeonException>)-> Void) 
+    func getFlashSaleProducts(request: FlashSaleProductsRequest, completion: @escaping(Result<[ProductDTO],Error>)-> Void) 
 }

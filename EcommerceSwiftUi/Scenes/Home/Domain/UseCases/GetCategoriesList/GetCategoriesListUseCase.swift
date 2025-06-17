@@ -15,8 +15,10 @@ class GetCategoriesListUseCase: BaseUseCase<CategoriesRequest,CategoriesList>, G
     
     //MARK: -Functions
     override func invoke(_ body: CategoriesRequest) -> AnyPublisher<Resource<CategoriesList>, Never> {
-        return execute { //Cannot convert value of type '() -> AnyPublisher<CategoriesList, LeonException>' to expected argument type '() -> AnyPublisher<CategoriesList, any Error>'
-            self.repository.getCategoriesList(request: body)
+        return execute {
+            self.repository
+                        .getCategoriesList(request: body)
+                    
         }
     }
 }

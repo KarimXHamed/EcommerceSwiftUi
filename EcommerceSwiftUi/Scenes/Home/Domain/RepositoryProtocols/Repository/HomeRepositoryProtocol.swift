@@ -8,9 +8,9 @@ import Combine
 
 protocol HomeRepositoryProtocol {
     
-    func getCategoriesList(request: CategoriesRequest) -> AnyPublisher<CategoriesList, LeonException>
+    func getCategoriesList(request: CategoriesRequest) -> AnyPublisher<CategoriesList, Error>
 
-    func getFlashSaleProducts(request: FlashSaleProductsRequest) -> AnyPublisher<[Product], LeonException>
+    func getFlashSaleProducts(request: FlashSaleProductsRequest) -> AnyPublisher<Products, Error>
 
     
 }

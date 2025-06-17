@@ -8,26 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let colomns = Array(repeating: GridItem(.flexible()), count: 3)
+    let rows = Array(repeating: GridItem(.fixed(100)), count: 3)
+    
+    
     var body: some View {
-        VStack {
-            Button {
-                getCategories()
-            } label: {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-            }
-            Text("Hello, world!")
-                .font(Fonts.semiBoldItalic.getFont(size: 30))
-        }
-        .padding()
+        
+        
+        BarIconWithImage(color: .prim,
+                         image: Icons.gear.imageOriginal)
+        
+        
     }
     
-}
+    
+    
 
-func getCategories() {
-    let network = NetworkProvider()
-    network.get(endPoint: CategoriesRequest(), model: [Category].self)
+    
 }
 
 #Preview {

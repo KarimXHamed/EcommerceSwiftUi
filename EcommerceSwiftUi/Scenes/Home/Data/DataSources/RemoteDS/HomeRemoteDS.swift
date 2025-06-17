@@ -16,7 +16,7 @@ class HomeRemoteDS: HomeRemoteDSProtocol {
     
     //MARK: -properties
     
-    func getCategoriesList(request: CategoriesRequest, completion: @escaping(Result<[String],LeonException>)-> Void) {
+    func getCategoriesList(request: CategoriesRequest, completion: @escaping(Result<[String],Error>)-> Void) {
       
         doNetworkTask(task: &categoriesListTask,
                       request: request,
@@ -27,7 +27,7 @@ class HomeRemoteDS: HomeRemoteDSProtocol {
         
     }
     
-    func getFlashSaleProducts(request: FlashSaleProductsRequest, completion: @escaping(Result<[ProductDTO],LeonException>)-> Void) {
+    func getFlashSaleProducts(request: FlashSaleProductsRequest, completion: @escaping(Result<[ProductDTO],Error>)-> Void) {
        
         doNetworkTask(task: &flashSaleProductsTask,
                       request: request,
@@ -40,7 +40,7 @@ class HomeRemoteDS: HomeRemoteDSProtocol {
     private func doNetworkTask<T:Codable>(task: inout Task<Void, Never>?,
                                           request:EndpointProtocol,
                                           model: T.Type,
-                                          completion: @escaping(Result<T,LeonException>)-> Void) {
+                                          completion: @escaping(Result<T,Error>)-> Void) {
         task = Task {
             do {
                 let networkSuccess = try await networkProvider.get(endpoint: request, model: T.self)
@@ -52,8 +52,7 @@ class HomeRemoteDS: HomeRemoteDSProtocol {
                 completion(.success(networkSuccess))
                 
             } catch {
-                guard let leonException = error as? LeonException else { return }
-                completion(.failure(leonException))
+                completion(.failure(error))
                 
             }
         }
