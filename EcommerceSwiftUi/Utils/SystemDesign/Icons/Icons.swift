@@ -10,6 +10,8 @@ enum Icons:String {
     
     case gear
     case bell
+    case heart
+    case heartFill = "heart.fill"
 
     
 }

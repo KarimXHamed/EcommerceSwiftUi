@@ -18,11 +18,11 @@ struct BarIconWithImage: View {
                 .fill(color)
             
             image
-                .clipShape(.circle)
-                .background(color)
-            
+                .scaledToFit()
+                .foregroundStyle(.black)
+              
         }
-        .frame(width: 200, height: 200)
+        .frame(width: 50, height: 50)
     
 
     }

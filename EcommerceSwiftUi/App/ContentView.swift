@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @State var isLiked = false
     let colomns = Array(repeating: GridItem(.flexible()), count: 3)
     let rows = Array(repeating: GridItem(.fixed(100)), count: 3)
     
@@ -16,15 +16,20 @@ struct ContentView: View {
     var body: some View {
         
         
-        BarIconWithImage(color: .prim,
-                         image: Icons.gear.imageOriginal)
+        HStack{
+            Spacer()
+            
+            ProductReusableView(productImage: Icons.bell.imageOriginal,
+                                isLiked: $isLiked)
+                .padding(.top, 5)
+        }
         
         
     }
     
     
     
-
+    
     
 }
 
