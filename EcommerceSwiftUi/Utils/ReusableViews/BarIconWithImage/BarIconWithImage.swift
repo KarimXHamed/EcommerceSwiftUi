@@ -7,11 +7,23 @@
 import SwiftUI
 
 struct BarIconWithImage: View {
-    var color: Color
-    var image: Image
+   
+    let color: Color
+    let image: Image
+    let action: () -> Void
     
     var body: some View {
        
+        Button {
+            action()
+        } label: {
+            buttonLabel
+        }
+    
+
+    }
+    var buttonLabel: some View {
+        
         ZStack {
             
             Circle()
@@ -20,11 +32,11 @@ struct BarIconWithImage: View {
             image
                 .scaledToFit()
                 .foregroundStyle(.black)
+                .fontWeight(.medium)
               
         }
         .frame(width: 50, height: 50)
-    
-
+        
     }
     
 }

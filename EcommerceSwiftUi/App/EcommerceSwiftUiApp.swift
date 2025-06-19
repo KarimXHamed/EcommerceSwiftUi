@@ -9,9 +9,24 @@ import SwiftUI
 
 @main
 struct EcommerceSwiftUiApp: App {
+    var appRouter = AppRouter()
+    
+    var rootView: AnyNavigationContainer?
+    
+    let navigationRouter: NavigationRouter = NavigationRouter()
+    
+    
+    init() {
+        self.rootView = appRouter.start(navigationRouter: navigationRouter)
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            
+            NavigationContainerView(navigationRouter: navigationRouter) {
+                rootView?.view()
+                
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ struct CategoriesRequest: EndpointProtocol {
         return URL(string: "https://dummyjson.com")!
     }
     
-    var path: String = "products/category-list"
+    var path: String = "/products/category-list"
     
     var parameters: [FieldKey : Any]?
     

@@ -8,25 +8,36 @@ import SwiftUI
 
 struct CategoryView: View {
     
-    var categoryImage: String
+    let categoryName: String
+    let categoryImage: String = "📱"
     
     var body: some View {
         
+        VStack(spacing: 0) {
+            
+            iconStack
+            
+            Text(categoryName)
+                .font(Fonts.medium.getFont(size: 12))
+                .padding(.top, 11)
+            
+        }
+
+    }
+    
+    var iconStack: some View {
+ 
         ZStack {
             
             Circle()
                 .fill(Color.ter)
             
             Text(categoryImage)
-                .font(.title.bold())
-                .foregroundStyle(.black)
-            
+                .font(Fonts.bold.getFont(size: 22))
               
         }
-        .frame(width: 70, height: 70)
+        .frame(width: 65, height: 65)
+        
     }
     
 } 
-#Preview {
-    CategoryView(categoryImage: "📱")
-}

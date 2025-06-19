@@ -72,7 +72,7 @@ class RequestBuilder: RequestBuilderProtocol {
     func makeRequest(endpoint:EndpointProtocol,method:String) -> DataRequest {
         
         guard let finalUrl = getFinalUrl(endpoint: endpoint) else {
-              fatalError("Invalid URL or query items")
+              fatalError("Invalid URL or query items") //Thread 3: Fatal error: Invalid URL or query items
           }
         
         return  AF.request(finalUrl,

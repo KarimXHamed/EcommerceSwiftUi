@@ -8,7 +8,7 @@ import Foundation
 import Combine
 import Factory
 
-class GetFlashSaleProductsUseCase: BaseUseCase<FlashSaleProductsRequest,Products> {
+class GetFlashSaleProductsUseCase: BaseUseCase<FlashSaleProductsRequest,Products>, GetFlashSaleProductsUseCaseProtocol {
     
     @Injected(\.homeRepository) private var repository: HomeRepositoryProtocol
     

@@ -1,12 +1,12 @@
 //
-//  GridHeaderReusableView.swift
+//  GridHeaderWithTimerReusableView.swift
 //  EcommerceSwiftUi
 //
-//  Created by Karim Hamed  on 18/06/2025.
+//  Created by Karim Hamed  on 19/06/2025.
 //
 import SwiftUI
 
-struct GridHeaderReusableView: View {
+struct GridHeaderWithTimerReusableView: View {
     
     let title: String
     let action: () -> Void
@@ -18,10 +18,11 @@ struct GridHeaderReusableView: View {
                 .font(Fonts.bold.getFont(size: 28))
                 .padding(.leading, 10)
             
+            CustomTimer()
+                .padding(.leading, 7)
+            
             Spacer()
-                        
-            
-            
+      
             SeeAllButton() {
                 action()
             }
@@ -30,6 +31,8 @@ struct GridHeaderReusableView: View {
             
         }
         .padding(.top, 10)
-
+        
     }
+    
+    
 }

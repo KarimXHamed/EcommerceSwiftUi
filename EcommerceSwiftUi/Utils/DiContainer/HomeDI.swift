@@ -8,6 +8,17 @@ import Factory
 
 extension Container {
     
+    static func homeServiceDi(navigationRouter:NavigationRouter) -> AnyNavigationContainer {
+        
+        let router = HomeRouter(navigationRouter: navigationRouter)
+        let viewModel = HomeViewModel(router: router)
+        let view = HomeView<HomeViewModel>(viewModel: viewModel)
+        
+        return view.eraseToAnyNavigationContainer()
+        
+    }
+    
+    
     var reviewMapper: Factory<ReviewMapper> {
         self {ReviewMapper()}
     }
@@ -23,4 +34,13 @@ extension Container {
     var homeRemoteDS: Factory<HomeRemoteDSProtocol> {
         self {HomeRemoteDS()}
     }
+    
+    var getCategoriesListUseCase: Factory<GetCategoriesListUseCaseProtocol> {
+        self { GetCategoriesListUseCase() }
+    }
+    
+    var getFlashSaleProductsUseCase: Factory<GetFlashSaleProductsUseCaseProtocol> {
+        self {GetFlashSaleProductsUseCase()}
+    }
+    
 }
