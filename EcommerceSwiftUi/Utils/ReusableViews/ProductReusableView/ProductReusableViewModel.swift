@@ -4,14 +4,13 @@
 //
 //  Created by Karim Hamed  on 19/06/2025.
 //
-import SwiftUI
 
-struct ProductReusableViewModel {
+struct ProductReusableViewModel: Hashable {
     
     let productTitle: String
     let currentPrice: Double
     let priceBeforeDiscount: Double
-    let productImage: Image
+    let productImage: String
     var isLiked: Bool
     
 }

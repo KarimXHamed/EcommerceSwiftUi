@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80DD614C2E07ECA200FD7AE6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 80DD614B2E07ECA200FD7AE6 /* Kingfisher */; };
 		80F22F5C2E00250200F4D01F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 80F22F5B2E00250200F4D01F /* Alamofire */; };
 		80F22F612E0025F100F4D01F /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 80F22F602E0025F100F4D01F /* Factory */; };
 		80F22F632E0025F100F4D01F /* FactoryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 80F22F622E0025F100F4D01F /* FactoryKit */; };
@@ -60,6 +61,7 @@
 				80F22F5C2E00250200F4D01F /* Alamofire in Frameworks */,
 				80F22F632E0025F100F4D01F /* FactoryKit in Frameworks */,
 				80F22F652E0025F100F4D01F /* FactoryTesting in Frameworks */,
+				80DD614C2E07ECA200FD7AE6 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +117,7 @@
 				80F22F602E0025F100F4D01F /* Factory */,
 				80F22F622E0025F100F4D01F /* FactoryKit */,
 				80F22F642E0025F100F4D01F /* FactoryTesting */,
+				80DD614B2E07ECA200FD7AE6 /* Kingfisher */,
 			);
 			productName = EcommerceSwiftUi;
 			productReference = 801A6CF42DFB088F00C331D8 /* EcommerceSwiftUi.app */;
@@ -147,6 +150,7 @@
 			packageReferences = (
 				80F22F562E001C7100F4D01F /* XCRemoteSwiftPackageReference "Factory" */,
 				80F22F5A2E00250200F4D01F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				80DD614A2E07ECA200FD7AE6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 801A6CF52DFB088F00C331D8 /* Products */;
@@ -380,6 +384,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		80DD614A2E07ECA200FD7AE6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.3.3;
+			};
+		};
 		80F22F562E001C7100F4D01F /* XCRemoteSwiftPackageReference "Factory" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Factory.git";
@@ -399,6 +411,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		80DD614B2E07ECA200FD7AE6 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80DD614A2E07ECA200FD7AE6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		80F22F5B2E00250200F4D01F /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 80F22F5A2E00250200F4D01F /* XCRemoteSwiftPackageReference "Alamofire" */;

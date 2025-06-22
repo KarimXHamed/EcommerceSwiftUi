@@ -9,10 +9,12 @@ import SwiftUI
 struct SeeAllButton: View {
     
     var action: () -> Void
+    var text: String = "See all"
+    var image: Image = Icons.rightArrow.imageOriginal
     
     var body: some View {
         
-        Text("See all")
+        Text(text)
             .font(Fonts.regular.getFont(size: 16))
             .foregroundStyle(.gray)
             .padding(.trailing, 2)
@@ -23,7 +25,7 @@ struct SeeAllButton: View {
             
         }
         label: {
-            Icons.rightArrow.imageTemplate
+            image
                 .resizable()
                 .scaledToFit()
                 .frame(width: 7, height: 7)

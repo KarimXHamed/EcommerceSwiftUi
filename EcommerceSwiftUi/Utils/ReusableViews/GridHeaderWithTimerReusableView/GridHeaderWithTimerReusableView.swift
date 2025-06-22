@@ -26,13 +26,8 @@ struct GridHeaderWithTimerReusableView: View {
             SeeAllButton() {
                 action()
             }
-            
-            
-            
         }
         .padding(.top, 10)
         
     }
-    
-    
 }

@@ -8,5 +8,5 @@ protocol HomeRemoteDSProtocol {
     
     func getCategoriesList(request: CategoriesRequest, completion: @escaping(Result<[String],Error>)-> Void)
     
-    func getFlashSaleProducts(request: FlashSaleProductsRequest, completion: @escaping(Result<[ProductDTO],Error>)-> Void) 
+    func getFlashSaleProducts(request: FlashSaleProductsRequest, completion: @escaping(Result<ProductsDTO,Error>)-> Void) 
 }

@@ -65,7 +65,7 @@ struct ProductReusableView: View {
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color.ter)
             
-            model.productImage
+            ImageLoader(url: model.productImage)
             
             heartView
             

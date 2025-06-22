@@ -7,11 +7,11 @@
 struct ReviewMapper: Mapper {
     
     func dtoToDomain(dto: ReviewDTO) -> Review {
-        return Review(rating: dto.rating,
-                      comment: dto.comment,
-                      date: dto.date,
-                      reviewerName: dto.reviewerName,
-                      reviewerEmail: dto.reviewerEmail)
+        return Review(rating: dto.rating ?? -1,
+                      comment: dto.comment ?? "",
+                      date: dto.date ?? "",
+                      reviewerName: dto.reviewerName ?? "",
+                      reviewerEmail: dto.reviewerEmail ?? "")
     }
     
 }

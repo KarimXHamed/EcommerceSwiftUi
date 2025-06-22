@@ -12,21 +12,19 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     
     var body: some View {
         
-        ZStack{
-            Color.ter
-            
-            VStack(spacing: 10){
+        VStack(spacing: 10){
                 topView
                 bottomView
                 Spacer()
             }
+            .ignoresSafeArea()
+            .onAppear {
+                viewModel.onAction(.onAppear)
+            }
+            .background {
+                Color.ter
+            }
             
-        }
-        .ignoresSafeArea()
-        .onAppear {
-            viewModel.onAction(.onAppear)
-        }
-        
     }
     
     var topBar: some View {
@@ -56,8 +54,6 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                                 notificationCircle,
                                 alignment: .topTrailing
                              )
-            
-            
         }
         
         
@@ -73,7 +69,7 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
             
         }
         .padding(20)
-        .padding(.top,35)
+        .padding(.top, CGFloat.topSafeAreaInset)
         .background(
             RoundedRectangle(cornerRadius: 25)
                 .fill(.white)
@@ -83,14 +79,18 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     var bottomView: some View {
         
         VStack(spacing: 15) {
+            
             categoriesGrid
+                .frame(height: 98)
+            
+            flashSaleGrid
+                .padding(.top, 10)
             Spacer()
-        
             
         }
         
         .padding(20)
-        .padding(.bottom,35)
+        .padding(.bottom,120)
         .background(
             RoundedRectangle(cornerRadius: 25)
                 .fill(.white)
@@ -99,20 +99,57 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     }
     
     var categoriesGrid: some View {
-        ScrollView(.horizontal){
-            LazyHGrid(rows: [GridItem( .fixed(100) )] ) {
-                Section {
+        
+        VStack(spacing: 0) {
+            
+            GridHeaderReusableView(title: "Categories") {
+                viewModel.onAction(.onCategoryPressed)
+            }
+            .padding(.bottom, 10)
+            
+            ScrollView(.horizontal){
+                
+                
+                
+                LazyHGrid(rows: [GridItem( .fixed(90) )] ) {
+                    
                     ForEach(viewModel.state.categories.list , id: \.self) { model in
                         CategoryView(categoryName: model)
                         
                     }
-                } header: {
-                    GridHeaderReusableView(title: "Categories") {
-                        viewModel.onAction(.onCategoryPressed)
-                    }
+                    
+                    
                 }
             }
         }
+    }
+    
+    var flashSaleGrid: some View {
+        
+        VStack(spacing: 0) {
+            
+            GridHeaderWithTimerReusableView(title: "Flash Sale") {
+                viewModel.onAction(.onProductPressed)
+                
+            }
+            .padding(.bottom, 10)
+            
+            ScrollView(.horizontal) {
+                
+                
+                
+                LazyHGrid(rows: [GridItem( .flexible(minimum: 220, maximum: .infinity) )] ) {
+                    ForEach($viewModel.state.products, id: \.self) { product in
+                        
+                        ProductReusableView(model: product)
+                        
+                    }
+                }
+                
+            }
+            
+        }
+        
     }
     
     var gradientView: some View {
@@ -176,4 +213,10 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
         
     }
     
+}
+
+#Preview {
+    let navigationRouter = NavigationRouter()
+    let router = HomeRouter(navigationRouter: navigationRouter)
+    HomeView<HomeViewModel>(viewModel: HomeViewModel(router: router) )
 }

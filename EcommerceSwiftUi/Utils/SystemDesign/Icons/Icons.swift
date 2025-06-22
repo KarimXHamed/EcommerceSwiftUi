@@ -14,6 +14,7 @@ enum Icons:String {
     case heartFill = "heart.fill"
     case rightArrow = "chevron.right"
     case searchIcon = "magnifyingglass"
+    case placeholder
 
     
 }

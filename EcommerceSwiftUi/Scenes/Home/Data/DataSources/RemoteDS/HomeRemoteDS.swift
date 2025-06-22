@@ -27,11 +27,11 @@ class HomeRemoteDS: HomeRemoteDSProtocol {
         
     }
     
-    func getFlashSaleProducts(request: FlashSaleProductsRequest, completion: @escaping(Result<[ProductDTO],Error>)-> Void) {
+    func getFlashSaleProducts(request: FlashSaleProductsRequest, completion: @escaping(Result<ProductsDTO,Error>)-> Void) {
        
         doNetworkTask(task: &flashSaleProductsTask,
                       request: request,
-                      model: [ProductDTO].self) { result in
+                      model: ProductsDTO.self) { result in
             completion(result)
         }
         
@@ -52,6 +52,7 @@ class HomeRemoteDS: HomeRemoteDSProtocol {
                 completion(.success(networkSuccess))
                 
             } catch {
+                
                 completion(.failure(error))
                 
             }
